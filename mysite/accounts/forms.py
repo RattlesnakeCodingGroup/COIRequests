@@ -65,6 +65,13 @@ class RegistrationForm(UserCreationForm):
                    'password', 'first_name', 'last_name']
         fields = ('__all__')
 
+    def clean_username(self):
+        username = self.cleaned_data['username']
+        if ' ' in username:
+            raise forms.ValidationError("Cannot contain spaces")
+
+        return username
+
     class PasswordForm(forms.ModelForm):
         class Meta:
             model = User

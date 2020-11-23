@@ -322,9 +322,12 @@ def logoutview(request):
 def SignUpView(request):
     if request.method == 'POST':
         context = {}
+
         form = RegistrationForm(request.POST)
         context['form'] = form
+
         if form.is_valid():
+            form.clean_username()
             newuser = form.save()
 
             return HttpResponseRedirect(reverse('emailview', args=(newuser.pk,)))
@@ -333,6 +336,7 @@ def SignUpView(request):
     else:
         form = RegistrationForm()
         return render(request, 'registration/register.html', {'form': form})
+
 
 
 # class PasswordSubmit(FormView):

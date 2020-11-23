@@ -22,7 +22,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '*5k=p+r=4nik13_)%_kqd9)2x#)%taxv0v3=^0&n0aqk@g^t85'
+SECRET_KEY = 'secret'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -33,7 +33,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'accounts',
-    'django_dropbox_storage',
+    #'django_dropbox_storage',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -84,11 +84,11 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'accounts',
+        'NAME': 'mysqlcoi',
         'HOST': 'localhost',
         'PORT': '3306',
         'USER': 'root',
-        'PASSWORD': 'zaverih99',
+        'PASSWORD': 'rocktofakie',
     }
 
 }
@@ -143,16 +143,12 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'jhaverihussain@gmail.com'
-EMAIL_HOST_PASSWORD = 'esujzowyaujxmqyt'
+EMAIL_HOST_USER = 'coirequests572@gmail.com'
+EMAIL_HOST_PASSWORD = 'vedovmnoyxlvvusa'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'pdf')
 
-DROPBOX_ACCESS_TOKEN = 'Y12EdMvx0zQAAAAAAAAAAfZ8A_jqtSER9xBf60SvB78wAm0fmrgVAtembCb9nUKk'
-DROPBOX_CONSUMER_KEY = 't5sfm4fold17za9'
-DROPBOX_CONSUMER_SECRET='sl5yh2ve525wt4j'
+# DROPBOX_ACCESS_TOKEN = 'Y12EdMvx0zQAAAAAAAAAAfZ8A_jqtSER9xBf60SvB78wAm0fmrgVAtembCb9nUKk'
+# DROPBOX_CONSUMER_KEY = 't5sfm4fold17za9'
+# DROPBOX_CONSUMER_SECRET='sl5yh2ve525wt4j'
 
-
-import pymysql
-pymysql.version_info = (1, 3, 13, "final", 0)
-pymysql.install_as_MySQLdb()
